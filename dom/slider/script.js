@@ -6,6 +6,8 @@ window.onload = function () {
 
     let currentPosition = 0;
 
+
+    // Обработка событий на кнопку назад
     prevBtn.addEventListener("click", function() {
         if(currentPosition > 0) {
             list.style.right = (currentPosition - 100) + "px";
@@ -13,6 +15,7 @@ window.onload = function () {
         }
     });
 
+    // Обработка событий на кнопку вперед
     nextBtn.addEventListener("click", function() {
         if(currentPosition < 500) {
             list.style.right = (currentPosition + 100) + "px";

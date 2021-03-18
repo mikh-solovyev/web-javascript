@@ -6,6 +6,7 @@ window.onload = function () {
     // Флаг для определения, четные или не четные красим
     let flag = true;
 
+    // Обработка события на изменения количества в input
     input.addEventListener("input", function (e) {
         const elementCnt = e.target.value,
             fragment = document.createDocumentFragment();
@@ -22,7 +23,7 @@ window.onload = function () {
         blocks.appendChild(fragment);
     });
 
-
+    // Обработка события на изменение цвета
     colors.addEventListener("change", function (e) {
         const color = e.target.value,
             items = blocks.querySelectorAll(".item");
@@ -30,6 +31,7 @@ window.onload = function () {
         for (let i = 0; i < items.length; i++) {
             items[i].style.background = "#FFF";
 
+            // В зависимости от флага меняем четные или не четные
             if(flag) {
                 if(i % 2) {
                     items[i].style.background = color;
@@ -40,7 +42,7 @@ window.onload = function () {
                 }
             }
         }
-        
+
         // Переключаем флаг
         flag = !flag;
     });

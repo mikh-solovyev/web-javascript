@@ -15,12 +15,15 @@ window.onload = function () {
         close.classList.add("close");
         close.innerText = "x";
         close.href = "#";
+
+        // При нажатии на крестик удаляем элемент из DOM
         close.addEventListener("click", () => { overlay.remove() });
 
         const content = document.createElement("div");
         content.classList.add("content");
         content.innerHTML = "Hello, <b>world</b>!";
 
+        // Добавляем созданные элементы в DOM
         modalContainer.appendChild(close);
         modalContainer.appendChild(content);
         overlay.appendChild(modalContainer);
